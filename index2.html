@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width" charset="utf-8">
+    <style>
+      .avatar {
+        vertical-align: middle;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+      }
+      .nav-bar {
+        background: linear-gradient(-90deg, #84CF6A, #16C0B0);
+        height: 60px;
+        margin-bottom: 15px;
+      }
+      </style>
+    <title>Product App</title>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+  <body>
+
+
+    <div id="app">
+
+      <div class="nav-bar"></div>
+
+    <div class="row px-md-5 ">
+           <div class="row px-md-5 " v-for="result in results">
+                <div class="card bg-dark text-white " >
+            <img :src="result.avatar" class="card-img " alt="..." >
+            <div class="card-img-overlay " >
+              <h5 class="card-title" style="color:#FF0000"><b>ID:{{result.id}}</b></h5>
+              <h6 class="card-title" style="color:#FFFFFF">{{company}}</h6>
+              <p class="card-text" style="color:#800080"><b>{{result.first_name}}</b></p>
+            </div>
+          </div>
+          </div>
+    </div>
+
+
+      <div class="album py-5 bg-light">
+       <div class="container" >
+
+         <div class="row">
+
+
+           <div class="col-md-4" v-for="result in results">
+             <div class="card mb-4 box-shadow">
+               <div class="card-body">
+                 <img v-bind:src="result.avatar" alt="Avatar" class="avatar" style="margin-left: 110px">
+                 <h5 class="card-title" style="text-align: center">{{result.first_name}} {{result.last_name}}</h5>
+                 <p class="card-text" style="text-align: center">{{ texts }} </p>
+                 <a v-bind:href="result.email" class="btn btn-primary my-2"  style="margin-left: 42%">Email Me</a>
+               </div>
+             </div>
+           </div>
+
+         </div>
+
+       </div>
+     </div>
+
+
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue" > </script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

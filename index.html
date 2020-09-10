@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width" charset="utf-8">
+    <title>Product App</title>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+   crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+<script  src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+
+</head>
+  <body>
+
+
+
+    <div id="app">
+
+      <div class="container">
+        <h2 style="text-align:center;">Employee Details</h2>
+
+       <div class="table-responsive">
+          <table class="table table-bordered " id="myTable">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Employee-name</th>
+                <th scope="col">Employee-salary</th>
+                <th scope="col">Employee-age</th>
+                <th scope="col">Employee-image</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="info in infos">
+                <th scope="row">{{info.id}}</th>
+                <td>{{info.employee_name}}</td>
+                <td>{{info.employee_salary}}</td>
+                <td>{{info.employee_age}}</td>
+                <td>{{info.profile_image}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+       </div>
+
+       <script>
+           $(document).ready( function () {
+            $('#myTable').DataTable();
+              } );
+       </script>
+
+   <script src="https://cdn.jsdelivr.net/npm/vue" > </script>
+   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+   <script src="scripts.js"></script>
+
+
+  </body>
+</html>
